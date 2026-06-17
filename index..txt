@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>恋爱测试 | 测出你最容易被分手的5大原因</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        body {
+            background: #fff;
+            color: #222;
+            line-height: 1.6;
+        }
+        header {
+            background: #222;
+            color: white;
+            padding: 14px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .menu-icon {
+            width: 30px;
+            height: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .menu-icon span {
+            width: 100%;
+            height: 3px;
+            background: #fff;
+        }
+        .logo-text {
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            color: #111;
+        }
+        .desc {
+            color: #555;
+            margin-bottom: 36px;
+            font-size: 16px;
+        }
+        .question-block {
+            margin-bottom: 30px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #eee;
+        }
+        .q-title {
+            font-size: 18px;
+            margin-bottom: 14px;
+            font-weight: 500;
+        }
+        .option-item {
+            margin: 10px 0;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: 0.2s;
+        }
+        .option-item:hover {
+            background: #f3f3f3;
+        }
+        .option-item input {
+            margin-right: 8px;
+        }
+        #submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: #222;
+            color: white;
+            border: none;
+            font-size: 17px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        #submit-btn:hover {
+            background: #444;
+        }
+        .result-box {
+            margin-top: 40px;
+            padding: 28px;
+            background: #f8f8f8;
+            border-radius: 10px;
+            display: none;
+        }
+        .result-box h2 {
+            margin-bottom: 16px;
+            color: #111;
+        }
+        .result-desc {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 14px;
+        }
+        .tip-text {
+            color: #666;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="logo-text">LOVETEST</div>
+    </header>
+
+    <div class="container">
+        <h1>测出你最容易被分手的5大核心原因</h1>
+        <p class="desc">凭第一直觉选择答案，全部完成后查看你的专属感情隐患报告</p>
+
+        <div class="quiz-box">
+            <div class="question-block" data-q="1">
+                <div class="q-title">1. 对方和你倾诉委屈难过时，你的第一反应是？</div>
+                <div class="option-item">
+                    <input type="radio" name="q1" value="cold"> A. 直接讲道理，只教对方怎么解决
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q1" value="ignore"> B. 随便敷衍几句，继续刷手机
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q1" value="self"> C. 觉得对方太矫情，小事没必要难过
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q1" value="ok"> D. 先安抚情绪，耐心倾听陪伴
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q1" value="self"> E. 不耐烦，让对方别传递负能量
+                </div>
+            </div>
+
+            <div class="question-block" data-q="2">
+                <div class="q-title">2. 约会需要临时改期，你会怎么做？</div>
+                <div class="option-item">
+                    <input type="radio" name="q2" value="cold"> A. 临近才通知，不解释缘由
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q2" value="ignore"> B. 改期后从不主动重新约
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q2" value="cold"> C. 直接消失，等对方来找你
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q2" value="ok"> D. 提前告知，主动补偿约会
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q2" value="self"> E. 随口改期，指责对方斤斤计较
+                </div>
+            </div>
+
+            <div class="question-block" data-q="3">
+                <div class="q-title">3. 伴侣提出想看你手机，你的反应？</div>
+                <div class="option-item">
+                    <input type="radio" name="q3" value="avoid"> A. 暴怒，指责对方不信任自己
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q3" value="ambiguity"> B. 慌张藏聊天记录，心里有鬼
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q3" value="ok"> C. 坦然无所谓，没有隐瞒内容
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q3" value="ok"> D. 和对方沟通安全感，达成共识
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q3" value="ambiguity"> E. 抢对方手机互相翻看报复
+                </div>
+            </div>
+
+            <div class="question-block" data-q="4">
+                <div class="q-title">4. 吵架冷战时你通常会？</div>
+                <div class="option-item">
+                    <input type="radio" name="q4" value="avoid"> A. 绝不低头，硬等对方先求和
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q4" value="avoid"> B. 冷暴力失联，好几天不回复
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q4" value="ignore"> C. 直接消失逃避，拒绝沟通
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q4" value="ok"> D. 短暂冷静后主动和解聊问题
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q4" value="self"> E. 疯狂翻旧账，戳对方痛处攻击
+                </div>
+            </div>
+
+            <div class="question-block" data-q="5">
+                <div class="q-title">5. 遇到异性主动示好，你会？</div>
+                <div class="option-item">
+                    <input type="radio" name="q5" value="ambiguity"> A. 不拒绝，享受被追捧的感觉
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q5" value="ambiguity"> B. 偷偷暧昧聊天，隐瞒伴侣
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q5" value="ok"> C. 直接拒绝，保持清晰边界
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q5" value="ok"> D. 主动告知伴侣，刻意避嫌
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q5" value="ambiguity"> E. 拿追求者刺激伴侣吃醋
+                </div>
+            </div>
+
+            <div class="question-block" data-q="6">
+                <div class="q-title">6. 聊两人未来规划时你的态度？</div>
+                <div class="option-item">
+                    <input type="radio" name="q6" value="noDuty"> A. 从来不会把对方放进人生计划
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q6" value="avoid"> B. 一提到未来就回避话题
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q6" value="ok"> C. 认真讨论定居、长久生活
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q6" value="noDuty"> D. 只会画大饼，从不兑现承诺
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q6" value="cold"> E. 觉得谈未来太早，敷衍带过
+                </div>
+            </div>
+
+            <div class="question-block" data-q="7">
+                <div class="q-title">7. 伴侣精心给你准备惊喜礼物，你会？</div>
+                <div class="option-item">
+                    <input type="radio" name="q7" value="self"> A. 嫌弃廉价，表现明显失望
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q7" value="ignore"> B. 收下毫无感谢，直接闲置
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q7" value="ok"> C. 开心道谢，之后回馈对方礼物
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q7" value="self"> D. 对比别人，吐槽对方不上心
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q7" value="self"> E. 嘴上道谢，背后吐槽浪费钱
+                </div>
+            </div>
+
+            <div class="question-block" data-q="8">
+                <div class="q-title">8. 和伴侣日常花钱相处模式？</div>
+                <div class="option-item">
+                    <input type="radio" name="q8" value="self"> A. 只花对方钱，自己从不付出
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q8" value="cold"> B. 每一笔账算清楚，极度计较
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q8" value="ok"> C. 合理分担，不计较小额开销
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q8" value="noDuty"> D. 频繁借钱，从不主动归还
+                </div>
+                <div class="option-item">
+                    <input type="radio" name="q8" value="self"> E. 控制对方开销，限制正常消费
+                </div>
+            </div>
+
+            <button id="submit-btn">查看我的分手隐患结果</button>
+        </div>
+
+        <div class="result-box" id="resultWrap">
+            <h2 id="resultTitle"></h2>
+            <p class="result-desc" id="resultContent"></p>
+            <p class="tip-text" id="resultTip"></p>
+        </div>
+    </div>
+
+    <script>
+        // 等待页面加载完成再绑定事件，修复旧代码事件失效bug
+        document.addEventListener('DOMContentLoaded', function(){
+            const submitBtn = document.getElementById('submit-btn');
+            const resultWrap = document.getElementById('resultWrap');
+            const resultTitle = document.getElementById('resultTitle');
+            const resultContent = document.getElementById('resultContent');
+            const resultTip = document.getElementById('resultTip');
+
+            submitBtn.addEventListener('click', function(){
+                let score = {
+                    ignore: 0,
+                    self: 0,
+                    ambiguity: 0,
+                    avoid: 0,
+                    noDuty: 0,
+                    cold: 0,
+                    ok: 0
+                }
+                const allQ = ['q1','q2','q3','q4','q5','q6','q7','q8'];
+                let allAnswered = true;
+
+                allQ.forEach(qName=>{
+                    const sel = document.querySelector(`input[name="${qName}"]:checked`);
+                    if(!sel){
+                        allAnswered = false;
+                    }else {
+                        const val = sel.value;
+                        if(score.hasOwnProperty(val)) score[val]++;
+                    }
+                })
+
+                if(!allAnswered) {
+                    alert('请把8道题目全部选择完成后再提交！');
+                    return;
+                }
+
+                // 剔除ok正向选项，只看负面标签
+                delete score.ok;
+                const maxKey = Object.entries(score).sort((a,b)=>b[1]-a[1])[0][0];
+
+                const resultMap = {
+                    ignore: {
+                        title:「情绪冷漠敷衍型」你最容易被分手：忽视伴侣情绪
+                        content:你习惯沉浸在自己的世界，对方的喜怒哀乐很难得到你的回应。长久单向付出会让另一半积攒巨大孤独感，慢慢心冷选择离开。
+                        tip:改善建议：每天留出10分钟放下手机专心倾听，优先共情再讲道理。
+                    },
+                    self: {
+                        title:「自我中心自私型」你最容易被分手：凡事只考虑自己
+                        content:你很难换位思考，总希望对方无条件迁就你的情绪，稍有不顺就不耐烦。长期单方面包容会耗尽对方爱意，最后及时止损。
+                        tip:改善建议：矛盾发生先换位思考，减少指责，接纳对方的负面感受。
+                    },
+                    ambiguity: {
+                        title:「边界混乱暧昧型」你最容易被分手：让人极度缺乏安全感
+                        content:你不懂得和异性划清边界，享受多人追捧，伴侣长期陷入猜忌内耗。感情里信任感一旦崩塌，很难修复。
+                        tip:改善建议：主动和异性保持距离，社交情况主动向伴侣报备。
+                    },
+                    avoid: {
+                        title:「逃避冷暴力型」你最容易被分手：拒绝沟通、擅长冷战
+                        content:出现冲突你只会失联、回避、僵持不低头，积压的矛盾不会消失，只会让对方独自消化委屈，慢慢放弃这段关系。
+                        tip:改善建议：约定冷静时限，不超过半天主动沟通解决问题。
+                    },
+                    noDuty: {
+                        title:「缺乏责任画饼型」你最容易被分手：看不到未来与诚意
+                        content:你只享受恋爱新鲜感，从不把对方规划进长远人生，许下的承诺从不兑现。对方看不到稳定希望，只能选择放手。
+                        tip:改善建议：少口头承诺，用细碎小事兑现对另一半的约定。
+                    },
+                    cold: {
+                        title:「理性冷漠计较型」你最容易被分手：缺少共情、过于算计
+                        content:你凡事只讲利弊、斤斤计较，很少顾及对方情绪感受，伴侣长期感受不到被偏爱，慢慢失望离开。
+                        tip:改善建议：感情不必事事算清，多给对方情绪包容。
+                    }
+                }
+                const res = resultMap[maxKey];
+                resultTitle.innerText = res.title;
+                resultContent.innerText = res.content;
+                resultTip.innerText = res.tip;
+                resultWrap.style.display = 'block';
+                resultWrap.scrollIntoView({behavior:'smooth'});
+            })
+        })
+    </script>
+</body>
+</html>
